@@ -1,12 +1,13 @@
 {
   "name": "@zhafron/opencode-kiro-auth",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "OpenCode plugin for AWS Kiro (CodeWhisperer) providing access to Claude models",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
+    "test": "npm run build && node --test",
     "format": "prettier --write 'src/**/*.ts'",
     "typecheck": "tsc --noEmit",
     "prepare": "husky"
@@ -49,6 +50,7 @@
     "type": "plugin",
     "hooks": [
       "auth",
+      "config",
       "event"
     ]
   },
